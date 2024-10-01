@@ -29,6 +29,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 	- Navigation
 	- Footer
 	- Posts and pages
+	- Pages
 	- Comments
 	- Widgets
 	- Media
@@ -744,22 +745,19 @@ textarea {
 .site-info{
 	text-align: center;
 }
-/* Posts and pages
+/* Posts 
 --------------------------------------------- */
 /* Main Post Styling */
-#post {
-	display: flex;
-    flex-direction: row; /* Stack the elements vertically */
-    justify-content: space-between; /* Distribute space between header, content, and footer */
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#postt {
+		flex-grow: 0;       /* disAllows the sub-container to grow */
+		flex-shrink: 1;     /* Allows the sub-container to shrink */
+		flex-basis: 25%;    /* Base size of each sub-container */
+		height: 50%;        /* Each sub-container will take up 50% of the height of the super container */
+		background-color: rgb(235, 239, 240); /* Background color for visibility */
+		border: 1px solid #ffffff; /* Border for visibility */
 }
 
-#post:hover {
+#postt:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -888,6 +886,45 @@ textarea {
         font-size: 1rem;
     }
 }
+/* Pages
+--------------------------------------------- */
+/* Site Content Flexbox Behavior */
+.site-content {
+    flex-grow: 1; /* Allow site content to grow and take available space */
+}
+
+/* Centered Container with Padding */
+.pt-container {
+	display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1200px; /* Set a max width for better content control */
+    width: 100%; /* Full width of the container */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Full-Width Content Area */
+.content-area {
+    width: 100%;
+}
+
+/* Main Content Block */
+.site-main {
+     display: block;  /* Ensure it's a block-level element */
+	}
+
+/* Flexbox Row for Post Grid or Layout */
+.pt-row {
+    display: flex;
+    flex-wrap: wrap; /* Allows the items to wrap into multiple rows if needed */
+    justify-content: space-between; /* Ensures space between items */
+    align-items: start;/* Ensures items stretch to equal height */
+    margin-left: -10px; /* Adjust negative margin for spacing */
+    margin-right: -10px;
+}
+
 
 /* Comments
 --------------------------------------------- */

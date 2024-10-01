@@ -1,9 +1,5 @@
 <?php
-/**
- * practicetheme Theme Customizer
- *
- * @package practicetheme
- */
+
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
