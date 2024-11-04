@@ -3,13 +3,8 @@ Theme Name: practicetheme
 Author: Tuba Saif
 Author URI: 
 Description: 
-Version: 1.0.0
-Tested up to: 
-Requires PHP: 
-License: 
-License URI: 
+Version: 1.0.0 
 Text Domain: practicetheme
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 
 /*--------------------------------------------------------------
@@ -49,12 +44,6 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 /* Normalize
 --------------------------------------------- */
-
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-	 ========================================================================== */
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -686,82 +675,157 @@ textarea {
 
 /* Navigation
 --------------------------------------------- */
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+
+/* Header Styles */
+.site-header {
+    background-color: #f8f9fa; /* Light background */
+    padding: 20px; /* Spacing around header */
+    box-shadow: 10px 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
-@media screen and (min-width: 37.5em) {
+.site-branding {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
 
-	.menu-toggle {
-		display: none;
-	}
+.site-title {
+    margin: 0;
+    font-size: 2rem;
+}
 
-	.main-navigation ul {
+.site-description {
+    font-size: 1rem;
+    color: #555; /* Darker gray for description */
+}
+
+/* Navigation Styles */
+.main-navigation {
+    display: flex;
+    justify-content: space-between; /* Space between toggle and menu */
+    align-items: center;
+    margin-top: 10px; /* Spacing above navigation */
+}
+
+/* Default styles for large screens */
+.main-navigation ul {
+    display: flex; /* Show flex for larger screens */
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.main-navigation ul li {
+    margin-right: 20px; /* Space between menu items */
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s;
+  }
+
+/* Styles for small screens */
+@media screen and (max-width: 699px) {
+    .main-navigation li {
+        display: none; /* Hide on mobile by default */
+    }
+	.hamburger {
 		display: flex;
 	}
-}
-.site-main{
-	display: flex;
-	flex-direction:row ;
-	flex-wrap: wrap; /* Allows items to move to the next row if needed */
-    gap: 10px; /* Adds spacing between the items */
-}
-.site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
-.post-navigation {
-	margin: 0 0 1.5em;
-}
+	/* Add rotation and hiding for the cross effect */
+	.hamburger.active span:nth-child(1) {
+		transform: rotate(45deg);
+		position: relative;
+		top: 8px; /* Moves span down to form the cross */
+	}
 
-.comment-navigation .nav-links,
-.posts-navigation .nav-links,
-.post-navigation .nav-links {
-	display: flex;
-}
+	.hamburger.active span:nth-child(2) {
+		opacity: 0; /* Hides the middle bar */
+	}
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	flex: 1 0 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	text-align: end;
-	flex: 1 0 50%;
+	.hamburger.active span:nth-child(3) {
+		transform: rotate(-45deg);
+		position: relative;
+		top: -8px; /* Moves span up to form the cross */
+	}
+    /* Show menu when toggled */
+    .main-navigation.toggled {
+        display: flex; /* Show the menu when toggled */
+        flex-direction: column; /* Stack items vertically */
+        background-color: #143454; /* Match header background */
+        width: 100%; /* Full width */
+        z-index: 100; /* On top of other elements */
+		color: #ffffff;
+    }
+	/* Show list items when menu is toggled */
+	.main-navigation.toggled li {
+		display: block;
+	}
 }
 
 /* Footer
 --------------------------------------------- */
 .site-footer {
-	background-color: #111;
-	margin:0%;
-	padding: 15px;
+    background-color: #111;
+    margin: 0%;
+    padding: 15px;
 }
-.site-info{
-	text-align: center;
+
+.site-info {
+    text-align: center;
 }
+
+/* Footer
+--------------------------------------------- */
+.site-footer {
+    background-color: #111;
+    margin: 0%;
+    padding: 15px;
+}
+
+.site-info {
+    text-align: center;
+}
+
 /* Posts 
 --------------------------------------------- */
 /* Main Post Styling */
+/* Flexbox Row for Post Grid or Layout */
+.pt-row {
+    display: flex;
+    flex-wrap: wrap; /* Allows the items to wrap into multiple rows if needed */
+    align-items: stretch;/* Ensures items stretch to equal height */
+	justify-content: center;
+    margin-left: 1px; /* Adjust negative margin for spacing */
+    margin-right: 1px;
+}
 #postt {
-		flex-grow: 0;       /* disAllows the sub-container to grow */
-		flex-shrink: 1;     /* Allows the sub-container to shrink */
-		flex-basis: 25%;    /* Base size of each sub-container */
-		height: 50%;        /* Each sub-container will take up 50% of the height of the super container */
-		background-color: rgb(235, 239, 240); /* Background color for visibility */
-		border: 1px solid #ffffff; /* Border for visibility */
+	flex-grow: 0;
+	/* disAllows the sub-container to grow */
+	flex-shrink: 1;
+	/* Allows the sub-container to shrink */
+	flex-basis: 25%;
+	width:50%;
+	/* Each sub-container will take up 50% of the height of the super container */
+	background-color: rgb(235, 239, 240);
+	/* Background color for visibility */
+	border: 1px solid #ffffff;
+	/* Border for visibility */
 }
 
 #postt:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	transform: translateY(-5px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
-
 /* Post Content Wrapper */
 .postcontent {
 	display: flex;
@@ -890,19 +954,13 @@ textarea {
 --------------------------------------------- */
 /* Site Content Flexbox Behavior */
 .site-content {
-    flex-grow: 1; /* Allow site content to grow and take available space */
+    margin:1rem;
 }
 
 /* Centered Container with Padding */
 .pt-container {
-	display:flex;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    max-width: 1200px; /* Set a max width for better content control */
-    width: 100%; /* Full width of the container */
-    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 /* Full-Width Content Area */
@@ -914,16 +972,6 @@ textarea {
 .site-main {
      display: block;  /* Ensure it's a block-level element */
 	}
-
-/* Flexbox Row for Post Grid or Layout */
-.pt-row {
-    display: flex;
-    flex-wrap: wrap; /* Allows the items to wrap into multiple rows if needed */
-    justify-content: space-between; /* Ensures space between items */
-    align-items: start;/* Ensures items stretch to equal height */
-    margin-left: -10px; /* Adjust negative margin for spacing */
-    margin-right: -10px;
-}
 
 
 /* Comments
