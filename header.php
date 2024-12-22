@@ -40,12 +40,6 @@
 				</div><!-- .site-branding -->
 
 				<nav id="site-navigation" class="main-navigation">
-					<button class="hamburger" aria-label="Toggle navigation">
-					<!-- Hamburger Icon -->
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
 					<?php
 					if ( has_nav_menu( 'primary' ) ) {
 						$nav_menu = wp_nav_menu( array( 
@@ -65,4 +59,10 @@
 					echo $nav_menu;
 					?>
 				</nav><!-- #site-navigation -->
+				<button class="hamburger" aria-label="Toggle navigation">
+					<!-- Hamburger Icon -->
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
 			</header><!-- #pthead -->

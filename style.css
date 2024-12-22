@@ -61,6 +61,7 @@ html {
  */
 body {
 	margin: 0px;
+	padding:0px; 
 }
 
 /**
@@ -633,8 +634,9 @@ textarea {
     display: flex;                       /* Use flexbox for alignment */
     align-items: center;                /* Vertically center the items */
     justify-content: space-between;     /* Space out items evenly */
-    padding: 20px;                      /* Add some padding */
-    background-color: #f8f8f8;          /* Optional background color */
+    padding: 10px 0px 10px 0px;                    /* Add some padding */
+    background-color: #911919;          /* Optional background color */
+	position:relative; 
 }
 
 .logo img {
@@ -644,6 +646,12 @@ textarea {
 .site-title {
     margin: 0;                          /* Remove default margin */
     font-size: 24px;                    /* Adjust font size */
+}
+
+.site-branding {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }
 
 .site-description {
@@ -656,76 +664,29 @@ textarea {
     display: flex; 
     justify-content: space-between; /* Space between logo and menu */
     align-items: center;            /* Center items vertically */
-    background-color: #edebeb;
-    padding: 10px;
-	
+    /* padding: 5px; */
 }
+
 .main-navigation li {
 	list-style-type: none;
-	margin:5px;
 }
+
 .main-navigation a {
 	text-decoration: none;
- }
- .main-navigation a:hover {
+}
+
+.main-navigation a:hover {
 	color: #4169e1;
- }
-
-
-
-/* Navigation
---------------------------------------------- */
-
-/* Header Styles */
-.site-header {
-    background-color: #f8f9fa; /* Light background */
-    padding: 20px; /* Spacing around header */
-    box-shadow: 10px 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
-.site-branding {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-}
-
-.site-title {
-    margin: 0;
-    font-size: 2rem;
-}
-
-.site-description {
-    font-size: 1rem;
-    color: #555; /* Darker gray for description */
-}
-
-/* Navigation Styles */
-.main-navigation {
-    display: flex;
-    justify-content: space-between; /* Space between toggle and menu */
-    align-items: center;
-    margin-top: 10px; /* Spacing above navigation */
-}
-
-/* Default styles for large screens */
-.main-navigation ul {
-    display: flex; /* Show flex for larger screens */
-    list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-}
-
-.main-navigation ul li {
-    margin-right: 20px; /* Space between menu items */
-}
 .hamburger {
     display: none;
     flex-direction: column;
     gap: 5px;
     background: none;
     border: none;
-  }
-  .hamburger span {
+}
+.hamburger span {
     display: block;
     width: 25px;
     height: 3px;
@@ -765,6 +726,8 @@ textarea {
         width: 100%; /* Full width */
         z-index: 100; /* On top of other elements */
 		color: #ffffff;
+		position:absolute;
+		top:100%;
     }
 	/* Show list items when menu is toggled */
 	.main-navigation.toggled li {
