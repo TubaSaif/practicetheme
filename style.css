@@ -664,7 +664,8 @@ textarea {
     display: flex; 
     justify-content: space-between; /* Space between logo and menu */
     align-items: center;            /* Center items vertically */
-    /* padding: 5px; */
+    padding: 8px;
+	margin:2px;
 }
 
 .main-navigation li {
@@ -673,10 +674,12 @@ textarea {
 
 .main-navigation a {
 	text-decoration: none;
+	color:#111;
+	padding:7px;
 }
 
 .main-navigation a:hover {
-	color: #4169e1;
+	color: #05481f;
 }
 
 .hamburger {
@@ -722,7 +725,7 @@ textarea {
     .main-navigation.toggled {
         display: flex; /* Show the menu when toggled */
         flex-direction: column; /* Stack items vertically */
-        background-color: #143454; /* Match header background */
+        background-color: #90bc90; /* Match header background */
         width: 100%; /* Full width */
         z-index: 100; /* On top of other elements */
 		color: #ffffff;
